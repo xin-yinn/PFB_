@@ -37,7 +37,8 @@ def profit_and_loss():
       for category in zip(days_empty_list, diff_empty_list):
         # using if funcion, if the catergory is less than 0,
         if category[1] <= 0:
-          file.write("\n[NET PROFIT DEFICIT]" " "f"DAY: {category[0]}, AMOUNT: USD{category[1]}")
+          file.write("\n[NET PROFIT DEFICIT]" " "f"DAY: {category[0]}, AMOUNT: USD{category[1]*-1}")
           # else if the category is more than 0, it will print this
         else:
           file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+

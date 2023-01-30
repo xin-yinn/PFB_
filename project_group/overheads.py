@@ -46,4 +46,5 @@ def overheads():
         
     #Open file using 'with' and 'open' keyword in 'append' mode
         with fp_write.open(mode= "a", encoding= "UTF-8", newline= "") as file:    
-            file.write("\n[HIGHEST OVERHEADS] " " "f"CATEGORY: {oh_cat[max_value_cat]}, AMOUNT: USD{max_value_cat}")
+            file.write("\n[HIGHEST OVERHEADS] " " "f"CATEGORY: {oh_cat[max_value_cat]}, AMOUNT: USD{max_value}")
+

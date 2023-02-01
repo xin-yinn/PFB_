@@ -1,51 +1,45 @@
 # import modules
-
-import csv, re
+import csv
 from pathlib import Path
 
+fp_write = Path.cwd()/"project_group"/"summary_report.txt"
+fp_read = Path.cwd()/"project_group"/"csv_reports"/"overheads.csv"
 
-
-# check file path of current working directory
-print(Path.cwd())
-
-#from api_test import function
-
-# Start of a function
 def overheads():
-    fp_write = Path.cwd()/"project_group"/"summary_report.txt"
-    fp_read = Path.cwd()/"project_group"/"csv_reports"/"overheads.csv"
-    # Checking if a file/directory exists with Pathlib
-    # Returns: True if a file/directory exists, False if a file/directory does not exit
-    print(fp_read.exists())
-
-    #Create a list
+    """
+    function finds the highest overhead category
+    no parameters required
+    """
+    #Create 3 empty lists to nest data 
     overheads_empty_list = []
     oh_cat = []
     oh_usd = []
     
-    # Open file using 'with' and 'open' keyword in 'read' mode
+    # Open file and use mode 'r' to read
     with fp_read.open(mode= "r", encoding= "UTF-8") as file:
         oh_reader = csv.reader(file)
-        # Use of next to skip first header row in csv file
+        # Use next to skip first header row in csv file
         next(oh_reader)
-       
+    
         for line in oh_reader:
             # append to empty list
             overheads_empty_list.append(line)
-            # for loop
+            # for loop to loop steps in each row of csv file
             for sublist in overheads_empty_list:
-                # sublist[0] is catergory column
+                # append sublist[0] which is the catergory column into oh_cat list
                 oh_cat.append(sublist[0])
-                # sublist[1] is overhead column
+                # append sublist[1] which is overheads column into oh_usd list
                 oh_usd.append(float(sublist[1]))
         
-        # creating variable for max value
+        # assign variable for max value
         max_value = max(oh_usd)
-        # creating variable for max value category
+        # assign variable for max value category
         max_value_cat = oh_usd.index(max_value)
-        # 
+        # assign variable for category name
         category = oh_cat[max_value_cat]
         
-    #Open file using 'with' and 'open' keyword in 'append' mode
+    #Open file and use mode 'w' to write output into txt file
         with fp_write.open(mode= "w", encoding= "UTF-8", newline= "") as file:    
-            file.write("\n[HIGHEST OVERHEADS] "f"{category.upper()}: {max_value}%")
+            file.write("[HIGHEST OVERHEADS] "f"{category.upper()}: {max_value}%")
+
+

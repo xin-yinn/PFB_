@@ -43,8 +43,9 @@ def overheads():
         max_value = max(oh_usd)
         # creating variable for max value category
         max_value_cat = oh_usd.index(max_value)
+        # 
+        category = oh_cat[max_value_cat]
         
     #Open file using 'with' and 'open' keyword in 'append' mode
-        with fp_write.open(mode= "a", encoding= "UTF-8", newline= "") as file:    
-            file.write("\n[HIGHEST OVERHEADS] " " "f"CATEGORY: {oh_cat[max_value_cat]}, AMOUNT: USD{max_value}")
-
+        with fp_write.open(mode= "w", encoding= "UTF-8", newline= "") as file:    
+            file.write("\n[HIGHEST OVERHEADS] "f"{category.upper()}: {max_value}%")

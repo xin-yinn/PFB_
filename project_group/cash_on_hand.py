@@ -42,4 +42,4 @@ def cash_on_hand():
     if count == 0:
             # open file and use mode 'a' to append output into txt file
             with file_path.open(mode = 'a', encoding = 'UTF-8', errors = 'ignore') as file:
-                file.write(f'\n[CASH SURPLUS] CASH ON HAND ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY')                         
+                file.write(f'\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY')                         

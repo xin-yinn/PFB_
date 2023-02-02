@@ -34,7 +34,7 @@ def profit_and_loss():
             if file_path.exists():
                 # open file with mode 'a' to append output into txt file
                 with file_path.open(mode = 'a', encoding = 'UTF-8', errors = 'ignore') as file:
-                  file.write(f'\n[PROFIT DEFICIT] DAY: {day[amount + 1]}, AMOUNT: USD{diff:.2f}')
+                  file.write(f'\n[PROFIT DEFICIT] DAY: {day[amount + 1]}, AMOUNT: USD{diff:.0f}')
             count += 1
     if count == 0:
             # open file with mode 'a' to append output into txt file

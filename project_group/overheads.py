@@ -2,6 +2,8 @@
 import csv
 from pathlib import Path
 
+#output to be written on a txt file
+#Get data/input from the specific file: overheads.csv
 fp_write = Path.cwd()/"project_group"/"summary_report.txt"
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"overheads.csv"
 

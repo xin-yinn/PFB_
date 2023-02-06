@@ -29,7 +29,8 @@ def profit_and_loss():
     for amount in range(len(netprofit) - 1):
         # difference = net profit on current day - net profit on next day
         diff = netprofit[amount] - netprofit[amount + 1]
-        # if difference more than 0, means that there is a profit deficit as current day net profit is higher than next day 
+        # if difference more than 0, means that there is a profit deficit as current day 
+        #net profit is higher than next day 
         if diff > 0:
             if file_path.exists():
                 # open file with mode 'a' to append output into txt file
